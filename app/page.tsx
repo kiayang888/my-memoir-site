@@ -109,14 +109,16 @@ function Hero() {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
+        <div className="space-y-6">
           <h1 className="font-serif text-4xl leading-tight md:text-5xl">
             A home for <span className="underline decoration-amber-400 decoration-4 underline-offset-8">memoirs</span>
             , stories, and the little moments that make a life.
           </h1>
           <p className="max-w-prose text-neutral-700">
-            Read free chapters, browse the library, and get new reflections delivered to your inbox.
+            KIAB Read free chapters, browse the library, and get new reflections delivered to your inbox.
             Build your legacy in words—and invite others into the story.
           </p>
+          </div>
           <div className="flex flex-wrap gap-3 pt-2">
             <Button className="rounded-2xl px-5"><BookOpen className="mr-2 h-4 w-4"/> Read Free Chapters</Button>
             <Button className="rounded-2xl px-5" variant="secondary"><NotebookPen className="mr-2 h-4 w-4"/> Browse Library</Button>
@@ -124,25 +126,25 @@ function Hero() {
           </div>
           <div className="flex items-center gap-2 text-sm text-neutral-600">
             <Star className="h-4 w-4" /> Trusted by readers who love heartfelt, lived‑in stories.
-          </div>
+          </div> 
+        
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative"
-        >
-          <div className="rounded-3xl border bg-white/80 p-4 shadow-xl backdrop-blur">
-            <div className="grid grid-cols-3 gap-3">
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+>
+  <div className="relative">
+    <div className="rounded-3xl border bg-white/80 p-4 shadow-xl backdrop-blur">
               {BOOKS.map((b, i) => (
                 <div key={i} className="overflow-hidden rounded-2xl border">
                   <img src={b.cover} alt={b.title} className="h-40 w-full object-cover"/>
                 </div>
               ))}
-            </div>
-          </div>
-        </motion.div>
+    </div>
+  </div>
+</motion.div>
       </div>
     </section>
   );
@@ -202,24 +204,26 @@ function Journal() {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {POSTS.map((p, idx) => (
-          <motion.article
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: idx * 0.05 }}
-            className="overflow-hidden rounded-3xl border bg-white"
-          >
-            <img src={p.image} alt="post" className="h-48 w-full object-cover" />
-            <div className="space-y-2 p-5">
-              <p className="text-xs uppercase tracking-wide text-amber-700">{p.date}</p>
-              <h3 className="font-serif text-xl">{p.title}</h3>
-              <p className="text-sm text-neutral-700">{p.excerpt}</p>
-              <a className="inline-flex items-center text-sm underline underline-offset-4 hover:opacity-80" href="#">
-                Read story <ArrowRight className="ml-1 h-4 w-4" />
-              </a>
-            </div>
-          </motion.article>
+
+<motion.article
+  key={idx}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: idx * 0.05 }}
+>
+  <div className="overflow-hidden rounded-3xl border bg-white">
+    <img src={p.image} alt="post" className="h-48 w-full object-cover" />
+    <div className="space-y-2 p-5">
+      <p className="text-xs uppercase tracking-wide text-amber-700">{p.date}</p>
+      <h3 className="font-serif text-xl">{p.title}</h3>
+      <p className="text-sm text-neutral-700">{p.excerpt}</p>
+      <a className="inline-flex items-center text-sm underline underline-offset-4 hover:opacity-80" href="#">
+        Read story <ArrowRight className="ml-1 h-4 w-4" />
+      </a>
+    </div>
+  </div>
+</motion.article>
         ))}
       </div>
     </section>
@@ -252,16 +256,17 @@ function MemoriesStrip() {
             "https://images.unsplash.com/photo-1519791883288-dc8bd696e667?q=80&w=1600&auto=format&fit=crop",
             "https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=1600&auto=format&fit=crop",
           ].map((src, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.03 }}
-              className="overflow-hidden rounded-2xl border"
-            >
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.03 }}
+          >
+            <div className="overflow-hidden rounded-2xl border">
               <img src={src} alt="memory" className="h-28 w-full object-cover" />
-            </motion.div>
+            </div>
+          </motion.div>
           ))}
         </div>
       </div>
