@@ -12,7 +12,7 @@
     "@radix-ui/react-slot": "1.0.2",
     "autoprefixer": "10.4.20",
     "class-variance-authority": "0.7.0",
-    "framer-motion": "11.3.31",
+    "framer-motion": "11.18.2",
     "lucide-react": "0.468.0",
     "next": "^14.2.33",
     "postcss": "8.4.47",
@@ -24,7 +24,8 @@
   },
   "devDependencies": {
     "@types/node": "24.6.2",
-    "@types/react": "19.2.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.5",
     "typescript": "5.5.4"
@@ -37,4 +38,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
+}
+{
+  "overrides": {
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0"
+  },
+  "engines": { "node": ">=18.17 <23" }
 }

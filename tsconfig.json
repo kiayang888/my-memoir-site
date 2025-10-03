@@ -39,3 +39,10 @@
     "node_modules"
   ]
 }
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": { "@/*": ["./*"] }   // or ["src/*"] if you use /src
+  }
+}
